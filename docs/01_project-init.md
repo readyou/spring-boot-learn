@@ -4,7 +4,7 @@
 3. 点击『Generate Project』的按钮，下载文件并解压。
 ![](./imgs/project-init.png)
 4. 在`Maven Projects`窗口中选择`spring-boot-learn>Plugins>spring-boot>spring-boot:run`，右键选择`Create 'spring-boot-learn [s...'`，创建`Debug Configurations`。
-![](./imgs/create_mvn_run.png)
+![](imgs/create_debug_configuration.png)
 
 说明：
 1. 这里版本号可能不是最新的。
