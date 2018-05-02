@@ -26,5 +26,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>me.readyou</groupId>
+			<artifactId>string-handler-spring-boot-starter</artifactId>
+		</dependency>
 	</dependencies>
 </project>

@@ -28,6 +28,21 @@
 		<module>learn-app</module>
 	</modules>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>me.readyou</groupId>
+                <artifactId>learn-app</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>me.readyou</groupId>
+                <artifactId>string-handler-spring-boot-starter</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 	<build>
 		<plugins>
 			<plugin>
