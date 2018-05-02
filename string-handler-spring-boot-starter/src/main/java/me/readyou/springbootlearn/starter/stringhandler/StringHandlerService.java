@@ -4,6 +4,7 @@ package me.readyou.springbootlearn.starter.stringhandler;
  * Created by wuxinlong on 18/5/2.
  */
 // 这是我们要提供的Service，但这里并不需要@service的注解
+// 因为我们在自动配置类中，会直接调用构造函数生成对象
 public class StringHandlerService {
     private int handleType;
 
