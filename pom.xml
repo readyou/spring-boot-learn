@@ -6,7 +6,7 @@
 	<groupId>me.readyou</groupId>
 	<artifactId>spring-boot-learn</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<name>spring-boot-learn</name>
 	<description>Demo project for Spring Boot</description>
@@ -24,18 +24,9 @@
 		<java.version>1.8</java.version>
 	</properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	<modules>
+		<module>learn-app</module>
+	</modules>
 
 	<build>
 		<plugins>
@@ -45,6 +36,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

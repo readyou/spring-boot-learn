@@ -21,3 +21,53 @@
 
 我们之后会经常使用别人写好的starter，必要的时候也需要自己写starter。为了弄清楚其中的原委，我们接下来写一个试试。
 
+## 重构项目结构
+### 1. 添加目录`learn-app`，将`src`目录移动到`learn-app`下，修改`pom.xml`。
+
+```
+    ...
+	<packaging>pom</packaging>
+    ...
+    	<modules>
+    		<module>learn-app</module>
+    	</modules>
+    ...
+```
+1. 修改`packaging`为pom。
+2. 添加`modules`标签。
+
+### 2. 在learn-app下添加`pom.xml`
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>learn-app</artifactId>
+	<packaging>jar</packaging>
+
+	<name>learn-app</name>
+	<description>spring-boot-learn-app</description>
+
+	<parent>
+		<groupId>me.readyou</groupId>
+		<artifactId>spring-boot-learn</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
+```
+
+### 3. 在`Maven Projects`窗口中，在`learn-app`下重新创建`Debug Configuration`（见工程初始化）
