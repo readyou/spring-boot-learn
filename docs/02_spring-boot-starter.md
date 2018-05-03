@@ -1,4 +1,6 @@
-# spring-boot-starter
+# [spring-boot-starter](https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/html/using-boot-build-systems.html#using-boot-starter)
+`Starters`是一系列文件使用的依赖描述符，它包含了开启某个功能时需要的一系列依赖，并支持依赖传递。
+
 在前面我们创建工程的时候，选择了依赖`Web`，我们打开`pom.xml`，将看到
 ```
 	...

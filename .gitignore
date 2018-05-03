@@ -29,3 +29,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+rebel.xml
+.rebel.xml.bak
