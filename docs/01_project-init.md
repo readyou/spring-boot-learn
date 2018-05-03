@@ -20,23 +20,86 @@
 1. 在`SpringBootLearnApplication.java`所在的目录添加目录`controller`（将不同类型的类放到不同的文件夹下的习惯），并在该目录下新建文件`HelloController`，内容如下：
     ```
     package me.readyou.springbootlearn.controller;
-    
+
+    import me.readyou.springbootlearn.starter.stringhandler.StringHandlerService;
+    import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.web.bind.annotation.RequestMapping;
-    import org.springframework.web.bind.annotation.ResponseBody;
     import org.springframework.web.bind.annotation.RestController;
-    
+
     /**
      * Created by wuxinlong on 18/5/2.
      */
     @RestController
     public class HelloController {
+        @Autowired
+        private StringHandlerService stringHandlerService;
+
+        // 这里不再需要@ResponseBody注解
         @RequestMapping("/")
-        @ResponseBody
         String home() {
-            return "Hello World!";
+            String msg = "Hello World!";
+            return stringHandlerService.doHandle(msg);
         }
     }
     ```
 1. 再次启动，访问`localhost:8080`，将看到`Hello World!`。
 
 
+## DIY
+我们这里是用工具生成了整个工程，如果想手动从0开始创建工程呢？也比较简单，有如下两个要点：
+
+### 1. pom文件
+1. 添加`parent`标签，让pom继承自`spring-boot-starter-parent`。
+2. 添加groupId=`org.springframework.boot`的必要的依赖，如`spring-boot-starter-web`。
+3. 添加插件`spring-boot-maven-plugin`。
+```
+    ...
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.10.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	
+	...
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+	</dependencies>
+	
+	...
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+    ...
+```
+
+### 2. 包含main方法的Application类
+```
+package me.readyou.springbootlearn;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringBootLearnApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootLearnApplication.class, args);
+    }
+}
+```
+
+### 其他跟spring-mvc基本一致
+1. `@RestController`比`@Controller`更方便，类中不再需要`@ResponseBody`。
+
+
+## 原文链接
+[https://github.com/readyou/spring-boot-learn/blob/master/docs/01_project-init.md](https://github.com/readyou/spring-boot-learn/blob/master/docs/01_project-init.md)

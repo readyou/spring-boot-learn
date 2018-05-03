@@ -287,3 +287,6 @@ public class HelloController {
 1. 重启服务，浏览器中可以看到全小写的`hello world!`。
 2. 修改配置项：`spring.boot.learn.string.handler.handleType=2`，重启服务，浏览器中可以看到全大写的`HELLO WORLD!`。
 
+
+## 原文链接
+[https://github.com/readyou/spring-boot-learn/blob/master/docs/01_project-init.md](https://github.com/readyou/spring-boot-learn/blob/master/docs/01_project-init.md)
