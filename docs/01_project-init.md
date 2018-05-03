@@ -1,4 +1,6 @@
 # 工程初始化
+
+## 创建工程
 1. 访问网站：http://start.spring.io/。
 1. 填写表单。
 1. 点击『Generate Project』的按钮，下载文件并解压。
@@ -6,8 +8,10 @@
     说明：
     1. 这里版本号可能不是最新的。
     2. `Search for dependencies `中输入的文字在选择的时候会清空，图片上看不到。
+
+## 启动
 1. 在`Maven Projects`窗口中选择`spring-boot-learn>Plugins>spring-boot>spring-boot:run`，右键选择`Create 'spring-boot-learn [s...'`，创建`Debug Configurations`。
-1. 点击绿色的`Debug`按钮，启动工程。
+1. 点击绿色的`Debug`按钮，启动工程（也可以在learn-app目录下执行命令：mvn spring-boot:run）。
     ![](imgs/create_debug_configuration.png)
     不出意外的话，能看到输出：
     ```
