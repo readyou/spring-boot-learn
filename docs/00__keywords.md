@@ -43,3 +43,18 @@ WebMvcConfigurerAdapter | @Configure注解 + 继承自各种Adapter，就可以�
 javax.persistence.Entity | jpa相关的类与注解
 org.springframework.data.repository | spring-data-jpa相关类
 org.springframework.data.domain.Pageable | spring-data相关领域类
+[RestTemplate](https://blog.csdn.net/itguangit/article/details/78825505) | 方便调用内部服务的类，还可用于log tracing
+@Conditional | 依赖配置，参数为实现了 Condition 的接口的类
+@EnableXXX | 通常用来定制 spring-boot 配置，被注解的类会继承 XXXConfigurerAdapter
+
+## Bean 相关
+keyword | description
+--------|-----------
+@Bean(initMethod="init",destroyMethod="destroy") | @Bean 注解里面可以带参数，指定生命周期函数
+@PostConstruct | 在 Bean 类里面指定 init 方法
+@PreDestroy | 在 Bean 类里面指定destroy 方法
+
+
+
+
+
